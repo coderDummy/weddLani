@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-bind="title">The Wedding of Lani & Nanda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&family=Italianno&family=Mr+De+Haviland&family=Cookie&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,600&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loading-screen">
+        <!-- <div class="loading-spinner"></div> -->
+        <div class="loading-pulse"></div>
+        <!-- <div class="loading-dots"><span></span><span></span><span></span></div> -->
+        <!-- <div class="loading-heart"><i class="fa-solid fa-heart"></i></div> -->
+        <!-- <div class="loading-rings"><span></span><span></span></div> -->
+        <p class="loading-text">Memuat undangan...</p>
+    </div>
+
+    <div id="overlay" style="background-image: url('image/img-opener.jpg');">
+        <div class="overlay-content">
+            <div class="overlay-top">
+                <p class="overlay-label">The Wedding Of</p>
+                <h1 class="overlay-title" data-bind="coupleNames">Lani & Nanda</h1>
+                <div class="line"></div>
+            </div>
+            <div class="overlay-bottom">
+                <p class="overlay-guest-label">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+                <h2 class="overlay-guest-name" data-bind="guestName">Tamu & Partner</h2>
+                <button id="btn-buka-undangan" class="btn-open">Buka Undangan</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+
+        <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.01)), url('image/img-top.jpg');">
+            <div class="hero-bg-zoom"></div>
+            <div class="hero-content" style="margin-top: -4vh;">
+                <!-- <p class="hero-label" style="color: rgb(255, 255, 255);">The Wedding Of</p> -->
+                <h1 class="hero-couple" data-bind="coupleNames" style="color: white;">Lani & Nanda</h1>
+                <div></div>
+                <p class="hero-date" data-bind="heroDate" style="color: white;">04 . 07 . 2026</p>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-inner">
+                <p class="verse-text" data-bind="verse">"Dan di antara tanda-tanda kekuasaan-Nya..."</p>
+                <div class="line" style="margin: 20px auto;"></div>
+                <p class="section-label">QS. Ar-Rum: 21</p>
+            </div>
+        </section>
+
+        <section class="fade-up alt-bg">
+            <div class="section-inner">
+                <h2 class="section-label">INTRODUCE</h2>
+                <h2 class="section-title">Pengantin</h2>
+                <div class="line" style="margin-bottom: 40px;"></div>
+
+                <div class="profile-block">
+                    <div class="profile-flex profile-flex-row">
+                        <img src="image/lani.jpg" alt="Bride" class="profile-img slide-left">
+                        <div class="profile-info slide-right">
+                            <h3 class="profile-name" data-bind="brideNickname">Lani</h3>
+                            <p class="profile-fullname" data-bind="brideFullName">Lani Dwi Kurnia, M.Pd</p>
+                            <div class="line" style="margin: 12px 0;"></div>
+                            <p class="profile-parent" data-bind="brideParent">Putri dari Alm. Nasril & Wirta Maryeni</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-block">
+                    <div class="profile-flex profile-flex-row-reverse">
+                        <img src="image/nanda.jpg" alt="Groom" class="profile-img slide-right">
+                        <div class="profile-info slide-left">
+                            <h3 class="profile-name" data-bind="groomNickname">Nanda</h3>
+                            <p class="profile-fullname" data-bind="groomFullName">Nanda Syah Putra, M.Pd</p>
+                            <div class="line" style="margin: 12px 0;"></div>
+                            <p class="profile-parent" data-bind="groomParent">Putra dari Murni & Sarimadiar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-inner">
+                <p class="section-label">Countdown</p>
+                <h2 class="section-title">Menuju Hari Bahagia</h2>
+                <div class="line"></div>
+                <div class="timer">
+                    <div class="time-box"><span id="days">00</span><label>Hari</label></div>
+                    <div class="time-box"><span id="hours">00</span><label>Jam</label></div>
+                    <div class="time-box"><span id="minutes">00</span><label>Menit</label></div>
+                    <div class="time-box"><span id="seconds">00</span><label>Detik</label></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up alt-bg">
+            <div class="section-inner">
+                <p class="section-label">Acara</p>
+                <h2 class="section-title">Save The Date</h2>
+                <div class="line"></div>
+                <div id="events-container" class="events-grid"></div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-inner">
+                <p class="section-label">Lokasi</p>
+                <h2 class="section-title">Denah & Peta</h2>
+                <div class="line"></div>
+                <div class="map-wrapper" style="margin-top: 24px;">
+                    <iframe id="map-embed" src="" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <a id="map-link" href="https://maps.google.com" target="_blank" class="btn-action">Buka Google Maps</a>
+            </div>
+        </section>
+
+        <section class="fade-up alt-bg">
+            <div class="section-inner">
+                <p class="section-label">Galeri</p>
+                <h2 class="section-title">Momen Kebahagiaan</h2>
+                <div class="line"></div>
+                <div id="gallery-container" class="gallery-grid"></div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-inner">
+                <p class="section-label">Kado Digital</p>
+                <h2 class="section-title">Tanda Kasih</h2>
+                <div class="line"></div>
+                <p class="gift-desc" style="margin-top: 24px;">Do'a restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, tetapi jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.</p>
+                <button id="btn-gift" class="btn-gift">Kirim Kado</button>
+                <div id="gift-details" class="gift-details hidden">
+                    <div class="gift-section">
+                        
+                        <div class="bank-box">
+                            <!-- <h3 class="gift-section-title">Transfer Rekening</h3> -->
+                            <p class="bank-name" data-bind="bankName">Bank Mandiri</p>
+                            <p class="bank-number">
+                                <span data-bind="bankNumber">1234567890</span>
+                                <i class="fa-regular fa-copy copy-icon" onclick="copyToClipboard()"></i>
+                            </p>
+                            <p class="bank-holder" data-bind="bankHolder">a.n. Lani Dwi Kurnia</p>
+                        </div>
+                    </div>
+                    <div class="gift-section">
+                        <div class="bank-box">
+                            <p class="bank-name" data-bind="bankName"><b>Alamat Rumah</b></p>
+                            <p class="gift-address" data-bind="giftAddress">Jl. Mulia Gg. Sepakat No. 34 RT. 02 RW. 08, Kel. Gajah Sakti Kec. Mandau, Duri</p>    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-rsvp fade-up">
+            <div class="section-inner">
+                <p class="section-label">RSVP</p>
+                <h2 class="section-title">Buku Tamu & Ucapan</h2>
+                <div class="line"></div>
+                <form id="rsvpForm" style="margin-top: 24px;">
+                    <input type="text" id="namaTamu" class="input-rsvp" placeholder="Nama Lengkap" required>
+                    <select id="kehadiranTamu" class="input-rsvp" required>
+                        <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                    <textarea id="pesanTamu" class="input-rsvp" rows="4" placeholder="Tulis ucapan hangat & doa Anda..." required></textarea>
+                    <button type="submit" class="btn-submit">Kirim Ucapan</button>
+                </form>
+                <div id="wishesArea" class="wishes-area"></div>
+            </div>
+        </section>
+
+        <footer class="footer" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('/image/img-footer.jpg');">
+            <div>
+                <p class="footer-label">Terima Kasih</p>
+                <p class="footer-couple" data-bind="coupleNames">Lani & Nanda</p>
+                <div class="line"></div>
+                <p class="footer-date" data-bind="footerDate">04 . 07 . 2026</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="music-btn" onclick="toggleMusic()">
+        <i class="fa-solid fa-music"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

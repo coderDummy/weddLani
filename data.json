@@ -1,0 +1,58 @@
+{
+  "title": "The Wedding of Lani & Nanda",
+  "coupleNames": "Lani & Nanda",
+  "heroDate": "04 . 07 . 2026",
+  "guestName": "Lani & Partner",
+  "brideFullName": "Lani Dwi Kurnia, M.Pd",
+  "brideNickname": "Lani",
+  "brideParent": "Putri dari Alm. Nasril & Wirta Maryeni",
+  "groomFullName": "Nanda Syah Putra, M.Pd",
+  "groomNickname": "Nanda",
+  "groomParent": "Putra dari Murni & Sarimadiar",
+  "verse": "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang.",
+  "verseSource": "QS. Ar-Rum: 21",
+  "countdownDate": "2026-07-04T09:00:00",
+  "events": [
+    {
+      "type": "Akad Nikah",
+      "icon": "fa-ring",
+      "date": "Sabtu, 04 Juli 2026",
+      "time": "09.00 WIB",
+      "address": "Jl. Mulia Gg. Sepakat No. 34<br>RT. 02 RW. 08, Kel. Gajah Sakti<br>Kec. Mandau, Duri",
+      "mapLink": null
+    },
+    {
+      "type": "Resepsi",
+      "icon": "fa-archway",
+      "date": "Sabtu, 04 Juli 2026",
+      "time": "11.30 WIB",
+      "address": "Jl. Mulia Gg. Sepakat No. 34<br>RT. 02 RW. 08, Kel. Gajah Sakti<br>Kec. Mandau, Duri",
+      "mapLink": "https://maps.app.goo.gl/ieELGBoyC69ZTSjA8"
+    },
+    {
+      "type": "Resepsi II",
+      "icon": "fa-archway",
+      "date": "Sabtu, 11 Juli 2026",
+      "time": "10.00 WIB",
+      "address": "Depan SDN 02 Suayan<br>Suayan Randah, Nagari Suayan<br>Kec. Akabiluru, Kab. Limapuluh Kota<br>Payakumbuh, Sumatera Barat",
+      "mapLink": "https://maps.app.goo.gl/dzqmMPLm37cE5Cga7"
+    }
+  ],
+  "footerDate": "04 . 07 . 2026",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d997.2084051812011!2d101.20258556962663!3d1.2729808999196903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMTYnMjIuNyJOIDEwMcKwMTInMTEuNiJF!5e0!3m2!1sid!2sid!4v1780412541253!5m2!1sid!2sid",
+  "galleryImages": [
+    "image/grid1.jpg",
+    "image/grid3.jpg",
+    "image/grid4.jpg",
+    "image/grid6.jpg",
+
+    "image/grid8.jpg",
+    "image/grid9.jpg",
+    "image/grid10.jpg",
+    "image/grid11.jpg",
+    "image/grid12.jpg",
+    "image/grid13.jpg"
+  ],
+  "musicUrl": "data/song.mp3",
+  "giftAddress": "Jl. Mulia Gg. Sepakat No. 34 RT. 02 RW. 08, Kel. Gajah Sakti Kec. Mandau, Duri"
+}
