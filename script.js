@@ -186,23 +186,77 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  async function loadGuestbook() {
+    try {
+      const res = await fetch('/api/guestbook');
+      const json = await res.json();
+      const area = document.getElementById('wishesArea');
+      area.innerHTML = '';
+      json.data.slice(0, 5).forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'wish-item';
+        el.innerHTML = `<h4>${item.nama} (${item.kehadiran})</h4><p>${item.pesan}</p><span class="wish-time">${formatTime(item.createdAt)}</span>`;
+        area.appendChild(el);
+      });
+    } catch (err) {
+      console.warn('Gagal load guestbook:', err);
+    }
+  }
+
+  loadGuestbook();
+
   const rsvpForm = document.getElementById('rsvpForm');
   if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
+    rsvpForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const nama = document.getElementById('namaTamu').value;
       const hadir = document.getElementById('kehadiranTamu').value;
       const pesan = document.getElementById('pesanTamu').value;
-      const area = document.getElementById('wishesArea');
-      const item = document.createElement('div');
-      item.className = 'wish-item';
-      item.innerHTML = `<h4>${nama} (${hadir})</h4><p>${pesan}</p>`;
-      area.insertBefore(item, area.firstChild);
-      rsvpForm.reset();
+
+      try {
+        const res = await fetch('/api/guestbook', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nama, kehadiran: hadir, pesan }),
+        });
+        const json = await res.json();
+        if (res.ok) {
+          const area = document.getElementById('wishesArea');
+          const item = document.createElement('div');
+          item.className = 'wish-item';
+          item.innerHTML = `<h4>${json.data.nama} (${json.data.kehadiran})</h4><p>${json.data.pesan}</p><span class="wish-time">${formatTime(json.data.createdAt)}</span>`;
+          area.insertBefore(item, area.firstChild);
+          if (area.children.length > 5) area.removeChild(area.lastChild);
+          rsvpForm.reset();
+          showThankYouModal();
+        } else {
+          alert(json.error || 'Gagal mengirim ucapan');
+        }
+      } catch (err) {
+        alert('Gagal mengirim ucapan. Coba lagi.');
+      }
     });
   }
 
 });
+
+function formatTime(iso) {
+  const d = new Date(iso);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+  const dd = String(d.getDate()).padStart(2, '0');
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  return `${dd} ${months[d.getMonth()]} ${d.getFullYear()}, ${hh}:${mm}`;
+}
+
+function showThankYouModal() {
+  const modal = document.getElementById('thankyouModal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    modal.querySelector('.modal-close-btn').onclick = () => modal.classList.add('hidden');
+    modal.querySelector('.modal-overlay').onclick = () => modal.classList.add('hidden');
+  }
+}
 
 function toggleMusic() {
   const btn = document.getElementById('music-btn');
