@@ -50,12 +50,12 @@
     { "type": "image", "src": "image/grid7.jpeg" },
     { "type": "image", "src": "image/grid8.jpeg" },
     { "type": "image", "src": "image/grid9.jpeg" },
+    { "type": "image", "src": "image/grid14.jpeg" },
+     { "type": "image", "src": "image/grid16.jpeg" },
+    { "type": "image", "src": "image/grid13.jpeg" },
     { "type": "image", "src": "image/grid10.jpeg" },
     { "type": "image", "src": "image/grid12.jpeg" },
-    { "type": "image", "src": "image/grid13.jpeg" },
-    { "type": "image", "src": "image/grid14.jpeg" },
-    { "type": "image", "src": "image/grid16.jpeg" },
-     { "type": "image", "src": "image/grid15.jpeg" }
+    { "type": "image", "src": "image/grid15.jpeg" }
 
   ],
   "videoUrl": "https://youtu.be/1M4dy3Bb_DE",

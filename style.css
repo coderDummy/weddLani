@@ -303,10 +303,12 @@ section { padding: 60px 28px; }
 .video-embed {
   width: 100%; border-radius: 12px; overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
 }
 .video-embed video, .video-embed iframe {
   display: block; width: 100%; aspect-ratio: 16 / 9;
   background: #000; border: 0;
+  height: 201px;
 }
 
 .gift-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin-bottom: 24px; }

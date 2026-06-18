@@ -111,18 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (videoWrapper && data.videoUrl) {
         const title = document.createElement('p');
         title.className = 'video-label';
-        // title.textContent = 'Video Prewedding';
         const container = document.createElement('div');
         container.className = 'video-embed';
 
         const ytMatch = data.videoUrl.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([a-zA-Z0-9_-]+)/);
         if (ytMatch) {
-          const iframe = document.createElement('iframe');
-          iframe.src = `https://www.youtube.com/embed/${ytMatch[1]}?rel=0`;
-          iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
-          iframe.allowFullscreen = true;
-          iframe.title = 'Video Prewedding';
-          container.appendChild(iframe);
+          const div = document.createElement('div');
+          div.id = 'youtube-player';
+          container.appendChild(div);
+          const tag = document.createElement('script');
+          tag.src = 'https://www.youtube.com/iframe_api';
+          const firstScript = document.getElementsByTagName('script')[0];
+          firstScript.parentNode.insertBefore(tag, firstScript);
+          window.onYouTubeIframeAPIReady = () => {
+            new YT.Player('youtube-player', {
+              videoId: ytMatch[1],
+              playerVars: { rel: 0 },
+              events: {
+                onStateChange: (e) => {
+                  if (e.data === YT.PlayerState.PLAYING && audioPlayer) {
+                    audioPlayer.pause();
+                  }
+                }
+              }
+            });
+          };
         } else {
           const gdMatch = data.videoUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
           const fileId = gdMatch ? gdMatch[1] : null;
@@ -132,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             video.controls = true;
             video.playsInline = true;
             video.preload = 'metadata';
+            video.onplay = () => { if (audioPlayer) audioPlayer.pause(); };
             container.appendChild(video);
           }
         }
