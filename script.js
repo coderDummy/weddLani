@@ -89,9 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const gallery = document.getElementById('gallery-container');
-      if (gallery && data.galleryImages) {
+      const items = data.galleryItems || data.galleryImages;
+      if (gallery && items) {
         const sizes = ['big', 'normal', 'vertical', 'normal', 'horizontal'];
-        data.galleryImages.forEach((src, i) => {
+        items.forEach((item, i) => {
+          const src = typeof item === 'string' ? item : item.src;
           const wrapper = document.createElement('div');
           const cls = sizes[i % sizes.length];
           wrapper.className = `gallery-item ${cls !== 'normal' ? cls : ''} fade-up`;
@@ -103,6 +105,43 @@ document.addEventListener('DOMContentLoaded', () => {
           gallery.appendChild(wrapper);
           observer.observe(wrapper);
         });
+      }
+
+      const videoWrapper = document.getElementById('video-wrapper');
+      if (videoWrapper && data.videoUrl) {
+        const title = document.createElement('p');
+        title.className = 'video-label';
+        // title.textContent = 'Video Prewedding';
+        const container = document.createElement('div');
+        container.className = 'video-embed';
+
+        const ytMatch = data.videoUrl.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([a-zA-Z0-9_-]+)/);
+        if (ytMatch) {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube.com/embed/${ytMatch[1]}?rel=0`;
+          iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          iframe.title = 'Video Prewedding';
+          container.appendChild(iframe);
+        } else {
+          const gdMatch = data.videoUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+          const fileId = gdMatch ? gdMatch[1] : null;
+          if (fileId) {
+            const video = document.createElement('video');
+            video.src = `https://docs.google.com/uc?export=download&id=${fileId}&confirm=t`;
+            video.controls = true;
+            video.playsInline = true;
+            video.preload = 'metadata';
+            container.appendChild(video);
+          }
+        }
+
+        if (container.children.length) {
+          videoWrapper.appendChild(title);
+          videoWrapper.appendChild(container);
+          videoWrapper.classList.remove('hidden');
+          observer.observe(videoWrapper);
+        }
       }
 
       if (data.musicUrl) {

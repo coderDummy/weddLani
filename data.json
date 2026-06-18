@@ -40,19 +40,25 @@
   ],
   "footerDate": "04 . 07 . 2026",
   "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d997.2084051812011!2d101.20258556962663!3d1.2729808999196903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMTYnMjIuNyJOIDEwMcKwMTInMTEuNiJF!5e0!3m2!1sid!2sid!4v1780412541253!5m2!1sid!2sid",
-  "galleryImages": [
-    "image/grid1.jpg",
-    "image/grid3.jpg",
-    "image/grid4.jpg",
-    "image/grid6.jpg",
+  "galleryItems": [
+    { "type": "image", "src": "image/grid1.jpeg" },
+    { "type": "image", "src": "image/grid2.jpeg" },
+    { "type": "image", "src": "image/grid3.jpeg" },
+    { "type": "image", "src": "image/grid4.jpeg" },
+    { "type": "image", "src": "image/grid5.jpeg" },
+    { "type": "image", "src": "image/grid6.jpeg" },
+    { "type": "image", "src": "image/grid7.jpeg" },
+    { "type": "image", "src": "image/grid8.jpeg" },
+    { "type": "image", "src": "image/grid9.jpeg" },
+    { "type": "image", "src": "image/grid10.jpeg" },
+    { "type": "image", "src": "image/grid12.jpeg" },
+    { "type": "image", "src": "image/grid13.jpeg" },
+    { "type": "image", "src": "image/grid14.jpeg" },
+    { "type": "image", "src": "image/grid16.jpeg" },
+     { "type": "image", "src": "image/grid15.jpeg" }
 
-    "image/grid8.jpg",
-    "image/grid9.jpg",
-    "image/grid10.jpg",
-    "image/grid11.jpg",
-    "image/grid12.jpg",
-    "image/grid13.jpg"
   ],
+  "videoUrl": "https://youtu.be/1M4dy3Bb_DE",
   "musicUrl": "data/song.mp3",
   "giftAddress": "Jl. Mulia Gg. Sepakat No. 34 RT. 02 RW. 08, Kel. Gajah Sakti Kec. Mandau, Duri"
 }

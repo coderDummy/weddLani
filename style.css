@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Esther';
+  src: url('https://db.onlinewebfonts.com/t/144240ddc0331c70ace625ce42981ac8.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/144240ddc0331c70ace625ce42981ac8.woff') format('woff'),
+       url('https://db.onlinewebfonts.com/t/144240ddc0331c70ace625ce42981ac8.ttf') format('truetype');
+}
+
 :root {
   --primary: #1A365D;
   --text: #2D2D2D;
@@ -188,14 +195,53 @@ section { padding: 60px 28px; }
 
 .profile-block { margin-bottom: 50px; }
 .profile-block:last-child { margin-bottom: 0; }
-.profile-img { width: 50%; height: 400px; object-fit: cover; object-position: 50% 20%; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-.profile-info { flex: 1; }
-.profile-flex { display: flex; align-items: center; gap: 20px; }
-.profile-flex-row { flex-direction: row; }
-.profile-flex-row-reverse { flex-direction: row-reverse; }
-.profile-name { font-family: var(--script); font-size: 2rem; color: var(--primary); line-height: 1.2; }
-.profile-fullname { font-family: var(--serif); font-size: 0.9rem; color: var(--text-light); margin-top: 4px; }
-.profile-parent { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; margin-top: 12px; }
+.profile-img { width: 100%; height: 532px; object-fit: cover; object-position: 50% 20%; box-shadow: 0 8px 24px rgba(0,0,0,0.08); display: block; border: 6px solid #fff; border-radius: 157px; }
+.profile-info {
+  margin-top: 20px;
+  text-align: center;
+  padding: 0 16px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-name {
+  font-family: var(--script);
+  font-size: 51px;
+  color: var(--primary);
+  font-weight: 800;
+  line-height: 83px;
+  letter-spacing: 0.7px;
+  margin-bottom: 4px;
+}
+.profile-fullname {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 23px;
+  color: var(--text-light);
+  line-height: 26px;
+  letter-spacing: 1.9px;
+  margin-bottom: 16px;
+}
+.profile-parent {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  max-width: 280px;
+  margin: 16px auto 0;
+}
+.profile-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: opacity 0.3s ease;
+}
+.profile-instagram:hover { opacity: 0.65; }
 
 .timer { display: flex; justify-content: center; gap: 12px; margin-top: 28px; }
 .time-box { background: #FFFFFF; padding: 16px 12px; min-width: 68px; text-align: center; border-radius: 8px; border: 1px solid #E8E4DE; }
@@ -248,6 +294,20 @@ section { padding: 60px 28px; }
 .gallery-item.big { grid-column: span 2; grid-row: span 2; }
 .gallery-item.vertical { grid-row: span 2; }
 .gallery-item.horizontal { grid-column: span 2; }
+
+.video-wrapper { margin-top: 32px; }
+.video-label {
+  font-family: var(--serif); font-size: 1.05rem; color: var(--primary);
+  text-align: center; margin-bottom: 16px; letter-spacing: 0.05em;
+}
+.video-embed {
+  width: 100%; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.video-embed video, .video-embed iframe {
+  display: block; width: 100%; aspect-ratio: 16 / 9;
+  background: #000; border: 0;
+}
 
 .gift-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin-bottom: 24px; }
 .btn-gift {
@@ -308,7 +368,7 @@ section { padding: 60px 28px; }
 @media (max-width: 480px) {
   .hero-couple { font-size: 3rem; }
   .overlay-title { font-size: 2.8rem; }
-  .profile-img { height: 260px; }
-  .profile-flex, .profile-flex-row-reverse { gap: 12px; }
-  .profile-name { font-size: 1.6rem; }
+  /* .profile-img {  border-radius: 110px; } */
+  .profile-name { font-size: 4.2rem; }
+  .profile-fullname { font-size: 1.405rem; }
 }

@@ -20,7 +20,7 @@
         <p class="loading-text">Memuat undangan...</p>
     </div>
 
-    <div id="overlay" style="background-image: url('image/img-opener.jpg');">
+    <div id="overlay" style="background-image: url('image/cover.jpg');">
         <div class="overlay-content">
             <div class="overlay-top">
                 <p class="overlay-label">The Wedding Of</p>
@@ -37,7 +37,7 @@
 
     <div id="wrapper">
 
-        <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.01)), url('image/img-top.jpg');">
+        <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,0.01)), url('image/img-header.jpg');">
             <div class="hero-bg-zoom"></div>
             <div class="hero-content" style="margin-top: -4vh;">
                 <!-- <p class="hero-label" style="color: rgb(255, 255, 255);">The Wedding Of</p> -->
@@ -66,26 +66,24 @@
                 <div class="line" style="margin-bottom: 40px;"></div>
 
                 <div class="profile-block">
-                    <div class="profile-flex profile-flex-row">
-                        <img src="image/lani.jpg" alt="Bride" class="profile-img slide-left">
-                        <div class="profile-info slide-right">
-                            <h3 class="profile-name" data-bind="brideNickname">Lani</h3>
-                            <p class="profile-fullname" data-bind="brideFullName">Lani Dwi Kurnia, M.Pd</p>
-                            <div class="line" style="margin: 12px 0;"></div>
-                            <p class="profile-parent" data-bind="brideParent">Putri dari Alm. Nasril & Wirta Maryeni</p>
-                        </div>
+                    <img src="image/lani.jpg" alt="Bride" class="profile-img">
+                    <div class="profile-info slide-right">
+                        <h3 class="profile-name" data-bind="brideNickname">Lani</h3>
+                        <p class="profile-fullname" data-bind="brideFullName">Lani Dwi Kurnia, M.Pd</p>
+                        <div class="line"></div>
+                        <p class="profile-parent" data-bind="brideParent">Putri dari Alm. Nasril & Wirta Maryani</p>
+                        <a href="https://instagram.com/lanidwikurniaa" target="_blank" class="profile-instagram"><i class="fa-brands fa-instagram"></i> lanidwikurniaa</a>
                     </div>
                 </div>
 
                 <div class="profile-block">
-                    <div class="profile-flex profile-flex-row-reverse">
-                        <img src="image/nanda.jpg" alt="Groom" class="profile-img slide-right">
-                        <div class="profile-info slide-left">
-                            <h3 class="profile-name" data-bind="groomNickname">Nanda</h3>
-                            <p class="profile-fullname" data-bind="groomFullName">Nanda Syah Putra, M.Pd</p>
-                            <div class="line" style="margin: 12px 0;"></div>
-                            <p class="profile-parent" data-bind="groomParent">Putra dari Murni & Sarimadiar</p>
-                        </div>
+                    <img src="image/nanda.jpg" alt="Groom" class="profile-img">
+                    <div class="profile-info slide-left">
+                        <h3 class="profile-name" data-bind="groomNickname">Nanda</h3>
+                        <p class="profile-fullname" data-bind="groomFullName">Nanda Syah Putra, M.Pd</p>
+                        <div class="line"></div>
+                        <p class="profile-parent" data-bind="groomParent">Putra dari Murni & Sarimadiar</p>
+                        <a href="https://instagram.com/nandasyahp_" target="_blank" class="profile-instagram"><i class="fa-brands fa-instagram"></i> nandasyahp_br</a>
                     </div>
                 </div>
             </div>
@@ -132,6 +130,7 @@
                 <h2 class="section-title">Momen Kebahagiaan</h2>
                 <div class="line"></div>
                 <div id="gallery-container" class="gallery-grid"></div>
+                <div id="video-wrapper" class="video-wrapper hidden"></div>
             </div>
         </section>
 
